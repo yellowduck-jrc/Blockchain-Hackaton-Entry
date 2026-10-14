@@ -1,4 +1,6 @@
 import "server-only";
+import { emergencyConfiguration } from "@/lib/emergency-paiflow";
+import type { EmergencyRecipient } from "@/lib/emergency";
 import {
   FeeBumpTransaction,
   Networks,
@@ -189,8 +191,9 @@ async function call<T>(
   query?: URLSearchParams,
   publicPath?: string,
   extraHeaders?: Record<string, string>,
+  deploymentConfig?: Config,
 ): Promise<T> {
-  const { origin, deploymentId, token } = await config();
+  const { origin, deploymentId, token } = deploymentConfig ?? await config();
   const url = new URL(
     publicPath
       ? `api/deployments/${deploymentId}/${publicPath}`
@@ -200,6 +203,7 @@ async function call<T>(
   if (query) url.search = query.toString();
   const response = await fetch(url, {
     method,
+    ...(deploymentConfig ? { signal: AbortSignal.timeout(20000), cache: "no-store" as const } : {}),
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
@@ -618,4 +622,17 @@ export async function webhookReward(record: WebhookReward) {
 export function integrationOrigin() {
   requireIntegration();
   return origin();
+}
+
+// Dedicated emergency client. Every call is bound to the server recipient mapping;
+// no demo/global Instant deployment fallback and no client-supplied upstream path.
+export function emergencyPaiflow(recipient: EmergencyRecipient) {
+  if (mode() !== "team") configurationError("Emergency payments require team mode.");
+  const selected = { ...emergencyConfiguration(recipient), origin: origin() };
+  return {
+    capabilities: () => call<DeploymentCapabilities>("capabilities", "GET", undefined, undefined, undefined, undefined, selected),
+    prepare: (from: string, amount: string) => call<Prepared>("execute", "POST", { from, amount }, undefined, undefined, undefined, selected),
+    submit: (signedXdr: string, preparationRequestId?: string) => call<Submitted>("execute/submit", "POST", { signedXdr }, new URLSearchParams({ wait: "false" }), undefined, preparationRequestId ? { "x-preparation-request-id": preparationRequestId } : undefined, selected),
+    status: (txHash: string) => call<TransactionStatus>(`transactions/${encodeURIComponent(txHash)}`, "GET", undefined, undefined, undefined, undefined, selected),
+  };
 }

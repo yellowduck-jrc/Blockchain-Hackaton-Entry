@@ -1,0 +1,120 @@
+{
+  "checkedAt": "2026-10-14T04:40:01.167Z",
+  "network": "testnet",
+  "rpc": "https://soroban-testnet.stellar.org",
+  "expectedAsset": "CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA",
+  "checks": [
+    {
+      "recipient": "parents",
+      "deploymentId": "3f61d495-5bfa-4f51-b4e3-f666fc7bf22d",
+      "trigger": "CA4D6A6TV53ESGHWEXV5VMSFGFV4SXSELTDUSYJIA47RU4NNDHGW3INV",
+      "wallet": "GBRHKU2LZNDPRCVXXPFZZ3XNS5DEWGTA4AVCPDER2RHY56EKOQ2EWMJK",
+      "triggerState": {
+        "contract": "CA4D6A6TV53ESGHWEXV5VMSFGFV4SXSELTDUSYJIA47RU4NNDHGW3INV",
+        "ledger": 5185842,
+        "fields": {
+          "Admin": "GDZJID372SKFUSQAPUWG6NYMIRILIAFI7HZDKAGCF3BI7S6PX7OZFFYX",
+          "Asset": "CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA",
+          "NextSteps": [
+            {
+              "address": "CDWHILTEQ5KMONWZ3XQML3ISFBLSYMF65GRYPQT2T67BU32QBKBJJXKO",
+              "data": ""
+            }
+          ],
+          "Version": 1
+        }
+      },
+      "payState": {
+        "contract": "CDWHILTEQ5KMONWZ3XQML3ISFBLSYMF65GRYPQT2T67BU32QBKBJJXKO",
+        "ledger": 5185842,
+        "fields": {
+          "Admin": "GDZJID372SKFUSQAPUWG6NYMIRILIAFI7HZDKAGCF3BI7S6PX7OZFFYX",
+          "Amount": "0",
+          "Asset": "CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA",
+          "IsCashOut": false,
+          "NextSteps": [],
+          "ParentNode": "CA4D6A6TV53ESGHWEXV5VMSFGFV4SXSELTDUSYJIA47RU4NNDHGW3INV",
+          "PercentageBps": 10000,
+          "Recipient": "GBRHKU2LZNDPRCVXXPFZZ3XNS5DEWGTA4AVCPDER2RHY56EKOQ2EWMJK",
+          "Version": 4
+        }
+      },
+      "configurationMatches": true
+    },
+    {
+      "recipient": "brother",
+      "deploymentId": "d34c35d4-10e0-4b59-9b98-425a1a503023",
+      "trigger": "CDL2M5WIGG7HFH2BFL4XZOWHN3WK7BRYZCH5YFT2N3FBFDE2IJKRW7C4",
+      "wallet": "GAWW3W5X5YETABCWRA4NBIOTX46YGFO5H3NEUHQCORW7PCE7ZYUAPLNB",
+      "triggerState": {
+        "contract": "CDL2M5WIGG7HFH2BFL4XZOWHN3WK7BRYZCH5YFT2N3FBFDE2IJKRW7C4",
+        "ledger": 5185842,
+        "fields": {
+          "Admin": "GDZJID372SKFUSQAPUWG6NYMIRILIAFI7HZDKAGCF3BI7S6PX7OZFFYX",
+          "Asset": "CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA",
+          "NextSteps": [
+            {
+              "address": "CA6NKUJGJG4YQEVPN6NTXXEN7MO42L5OA4A2JVCYNOMMGFP66G2EIS2H",
+              "data": ""
+            }
+          ],
+          "Version": 1
+        }
+      },
+      "payState": {
+        "contract": "CA6NKUJGJG4YQEVPN6NTXXEN7MO42L5OA4A2JVCYNOMMGFP66G2EIS2H",
+        "ledger": 5185842,
+        "fields": {
+          "Admin": "GDZJID372SKFUSQAPUWG6NYMIRILIAFI7HZDKAGCF3BI7S6PX7OZFFYX",
+          "Amount": "0",
+          "Asset": "CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA",
+          "IsCashOut": false,
+          "NextSteps": [],
+          "ParentNode": "CDL2M5WIGG7HFH2BFL4XZOWHN3WK7BRYZCH5YFT2N3FBFDE2IJKRW7C4",
+          "PercentageBps": 10000,
+          "Recipient": "GAWW3W5X5YETABCWRA4NBIOTX46YGFO5H3NEUHQCORW7PCE7ZYUAPLNB",
+          "Version": 4
+        }
+      },
+      "configurationMatches": true
+    },
+    {
+      "recipient": "sister",
+      "deploymentId": "73ebc55f-1a70-4ddd-8172-b05489871c85",
+      "trigger": "CCQIVWQOVORC57J2PPZZ54NECNYKLH76UWSTM5DOGO4GBLEPJ3IM7OS6",
+      "wallet": "GDZJID372SKFUSQAPUWG6NYMIRILIAFI7HZDKAGCF3BI7S6PX7OZFFYX",
+      "triggerState": {
+        "contract": "CCQIVWQOVORC57J2PPZZ54NECNYKLH76UWSTM5DOGO4GBLEPJ3IM7OS6",
+        "ledger": 5185842,
+        "fields": {
+          "Admin": "GDZJID372SKFUSQAPUWG6NYMIRILIAFI7HZDKAGCF3BI7S6PX7OZFFYX",
+          "Asset": "CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA",
+          "NextSteps": [
+            {
+              "address": "CDHOU6GFDTFIBADEKF4FEKSGZOT2HTLKMOH5OTYK2SROCH73VN5FKXGE",
+              "data": ""
+            }
+          ],
+          "Version": 1
+        }
+      },
+      "payState": {
+        "contract": "CDHOU6GFDTFIBADEKF4FEKSGZOT2HTLKMOH5OTYK2SROCH73VN5FKXGE",
+        "ledger": 5185842,
+        "fields": {
+          "Admin": "GDZJID372SKFUSQAPUWG6NYMIRILIAFI7HZDKAGCF3BI7S6PX7OZFFYX",
+          "Amount": "0",
+          "Asset": "CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA",
+          "IsCashOut": false,
+          "NextSteps": [],
+          "ParentNode": "CCQIVWQOVORC57J2PPZZ54NECNYKLH76UWSTM5DOGO4GBLEPJ3IM7OS6",
+          "PercentageBps": 10000,
+          "Recipient": "GDZJID372SKFUSQAPUWG6NYMIRILIAFI7HZDKAGCF3BI7S6PX7OZFFYX",
+          "Version": 4
+        }
+      },
+      "configurationMatches": true
+    }
+  ],
+  "limitation": "Read-only configuration evidence at the recorded ledgers. No payment sent, no bytecode audit or successful payout proof. Recheck before preparing any future payment."
+}

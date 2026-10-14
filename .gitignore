@@ -3,3 +3,6 @@ node_modules/
 .env*
 !.env.example
 *.tsbuildinfo
+
+# Durable local emergency request/payment evidence; never commit signatures.
+.data/

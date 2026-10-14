@@ -21,11 +21,11 @@ async function screen() {
   const { default: Page } = await import("@/app/page");
   return renderToStaticMarkup(await Page());
 }
-it("keeps checkout as the default while discovery precedes runnable payments", async () => {
+it("keeps the family overview as the default without server-side upstream calls", async () => {
   const html = await screen();
-  expect(html).toContain("<h2>Pay</h2>");
-  expect(html).toContain("<h2>Live feed</h2>");
-  expect(html).toContain("Checking deployment capabilities");
+  expect(html).toContain("Family allocations");
+  expect(html).toContain("Open Emergency Pot");
+  expect(html).toContain("Send Padala");
   expect(html).not.toContain("Per-payment recipient");
   expect(html).not.toContain(token);
   expect(fetchMock).not.toHaveBeenCalled();
@@ -38,7 +38,7 @@ it.each(["prepare", "demo", "invalid"])("server render preserves %s guards and p
   expect(fetchMock).not.toHaveBeenCalled();
   if (mode === "prepare") {
     expect(html).toContain("Preparation mode");
-    expect(html).toContain("Live feed is disabled");
+    expect(html).toContain("wallet actions are unavailable");
   }
   if (mode === "invalid") expect(html).toContain("Payments unavailable");
 });
